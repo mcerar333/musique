@@ -1,0 +1,137 @@
+.manage {
+  font-size: 1.4rem;
+
+  @extend %section;
+  @extend %glass-container;
+
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 5rem;
+
+  @include respond(m) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.upload {
+  margin-top: 2rem;
+
+  &__area {
+    height: 16rem;
+    padding: 2rem;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 5px;
+    margin-bottom: 2.5rem;
+    border: 2px dashed var(--color-grey-dark-2);
+
+    transition: all 0.3s;
+
+    display: grid;
+    place-items: center;
+
+    &:hover,
+    &.active {
+      color: var(--color-grey-light-1);
+      border: 2px solid var(--color-primary);
+
+      @include gradient(
+        to bottom right,
+        var(--color-primary-light),
+        var(--color-primary-dark)
+      );
+    }
+  }
+
+  &__bar {
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    &__background {
+      height: 1.5rem;
+      border-radius: 5px;
+      background-color: var(--color-grey-light-4);
+    }
+
+    &__progress {
+      display: block;
+      width: 70%;
+      height: 100%;
+      border-radius: 5px;
+      background-color: var(--color-tertiary);
+
+      background-size: 1rem 1rem;
+      background-image: linear-gradient(
+        45deg,
+        hsla(0, 0%, 100%, 0.15) 25%,
+        transparent 25%,
+        transparent 50%,
+        hsla(0, 0%, 100%, 0.15) 50%,
+        hsla(0, 0%, 100%, 0.15) 75%,
+        transparent 75%,
+        transparent
+      );
+
+      animation: progress-bar-stripes 1s linear infinite;
+      transition: background-color 0.3s;
+
+      &--success {
+        background-color: var(--color-secondary);
+      }
+      &--error {
+        background-color: var(--color-primary);
+      }
+      &--complete {
+        animation: none;
+      }
+    }
+  }
+}
+
+.music {
+  margin-top: 2rem;
+  font-size: 1.6rem;
+}
+
+.new-song {
+  border-radius: 1rem;
+  padding: 1.3rem 2.5rem;
+  box-shadow: var(--shadow-small);
+
+  @extend %glass-container;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  @include respond(xxs) {
+    padding: 1.3rem 2rem;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+
+    button {
+      padding: 1rem;
+      margin-left: 1rem;
+      border-radius: 1rem;
+      background-color: var(--color-grey-light-1);
+
+      display: flex;
+      align-items: center;
+
+      svg {
+        width: 2.2rem;
+        height: 2.2rem;
+        fill: var(--color-primary);
+      }
+    }
+  }
+}

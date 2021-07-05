@@ -1,0 +1,65 @@
+{
+  "name": "musique",
+  "version": "1.0.0",
+  "description": "music streaming app",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "test:unit:update": "vue-cli-service test:unit -u",
+    "test:e2e": "vue-cli-service test:e2e",
+    "lint": "vue-cli-service lint",
+    "i18n:report": "vue-cli-service i18n:report --src \"./src/**/*.?(js|vue)\" --locales \"./src/locales/**/*.json\""
+  },
+  "author": "Tony G",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mcerar333/musique.git"
+  },
+  "homepage": "https://github.com/mcerar333/musique#readme",
+  "bugs": {
+    "url": "https://github.com/mcerar333/musique/issues"
+  },
+  "dependencies": {
+    "@vee-validate/rules": "^4.4.5",
+    "core-js": "^3.15.2",
+    "date-fns": "^2.22.1",
+    "firebase": "^8.7.0",
+    "howler": "^2.2.3",
+    "lottie-web": "^5.7.11",
+    "nprogress": "^1.0.0-1",
+    "register-service-worker": "^1.7.2",
+    "vee-validate": "^4.4.5",
+    "vue": "^3.0.4",
+    "vue-i18n": "^9.1.0",
+    "vue-router": "^4.0.3",
+    "vuex": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/eslint-parser": "^7.14.7",
+    "@intlify/vue-i18n-loader": "^2.1.1",
+    "@vue/cli-plugin-babel": "~5.0.0-beta.2",
+    "@vue/cli-plugin-e2e-cypress": "~5.0.0-beta.2",
+    "@vue/cli-plugin-eslint": "~5.0.0-beta.2",
+    "@vue/cli-plugin-pwa": "~5.0.0-beta.2",
+    "@vue/cli-plugin-router": "~5.0.0-beta.2",
+    "@vue/cli-plugin-unit-jest": "~5.0.0-beta.2",
+    "@vue/cli-plugin-vuex": "~5.0.0-beta.2",
+    "@vue/cli-service": "~5.0.0-beta.2",
+    "@vue/compiler-sfc": "^3.1.4",
+    "@vue/eslint-config-airbnb": "^5.3.0",
+    "@vue/test-utils": "^2.0.0-0",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-vue": "^7.12.1",
+    "lodash": "^4.17.21",
+    "sass": "^1.35.1",
+    "sass-loader": "^12.1.0",
+    "vue-cli-plugin-i18n": "~2.1.1",
+    "vue-jest": "^5.0.0-0"
+  }
+}

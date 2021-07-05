@@ -1,0 +1,166 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+  	function isSignedIn() {
+    	return request.auth != null;
+    } 
+     
+    // USERS COLLECTION
+    match /users/{uid} {
+      allow read: if request.auth.uid == uid;
+
+      allow create: if isValidUser(request.resource.data) &&
+        checkKeysUser();
+
+      allow update: if request.auth.uid == uid &&
+      	isValidUser(request.resource.data) &&
+        checkKeysUser();
+
+      allow delete: if request.auth.uid == uid;
+
+      function isValidUser(user) {
+        return (
+          user.name is string &&
+          user.name.size() >= 3 &&
+          user.name.size() <= 40 &&
+          user.name != '' &&
+
+          user.age is number &&
+          user.age >= 18 &&
+          user.age <= 123 &&
+          user.age != '' &&
+
+          user.country is string &&
+          user.country != '' &&
+
+          user.email is string &&
+          user.email.size() >= 5 &&
+          user.email.size() <= 60 &&
+          user.email != '' 
+        );
+      }
+
+      function checkKeysUser() {
+      	let optionalFields = [];
+        let requiredFields = ['name','age','country','email'];
+        let allFields = requiredFields.concat(optionalFields);
+        return request.resource.data.keys().hasAll(requiredFields) &&
+        request.resource.data.keys().hasOnly(allFields)
+      }
+    }
+    
+    // COMMENTS COLLECTION
+    match /comments/{itemId} {
+      allow read: if true;
+
+      allow create: if isSignedIn() &&
+      	isValidComment(request.resource.data) &&
+        checkKeysComment();
+      
+      allow update: if false;
+      allow delete: if false;
+
+      function isValidComment(comment) {
+        return (
+          comment.content is string &&
+          comment.content.size() >= 3 &&
+          comment.content.size() <= 100 &&
+          comment.content != '' &&
+
+          comment.userName is string &&
+          comment.userName != '' &&
+
+          comment.songID is string &&
+          comment.songID != '' &&
+
+          comment.uid is string &&
+          comment.uid != '' &&
+
+          comment.createdAt is timestamp &&
+          comment.createdAt != '' 
+        );
+      }
+
+      function checkKeysComment() {
+        let optionalFields = [];
+        let requiredFields = ['content','userName','songID','uid','createdAt'];
+        let allFields = requiredFields.concat(optionalFields);
+        return request.resource.data.keys().hasAll(requiredFields) &&
+        request.resource.data.keys().hasOnly(allFields)
+      }
+    }
+    
+    // SONGS COLLECTION
+    match /songs/{itemId} {
+      allow read: if true;
+
+      allow create: if isSignedIn() &&
+      	isValidSong(request.resource.data) &&
+        checkKeysSong();
+
+      allow update: if isUpdatingComments() || 
+      	isValidSong(request.resource.data) &&
+        isOwnerSong(request.resource.data) &&
+        isOwnerSong(resource.data) &&
+        rateLimit(5) &&
+        checkKeysSong();
+        
+      allow delete: if isOwnerSong(resource.data);
+      
+      function isUpdatingComments() {
+      	return request.resource.data.diff(resource.data).affectedKeys().hasOnly(['commentCount'])
+      }
+  
+      function isOwnerSong(song) {
+        return request.auth.uid == song.uid;
+      }
+  
+      function isValidSong(song) {
+        return (
+          song.displayName is string &&
+          song.displayName != '' &&
+        
+          song.originalName is string &&
+          song.originalName != '' &&
+        
+          song.modifiedName is string &&
+          song.modifiedName != '' &&
+         
+          song.genre is string &&
+       
+          song.commentCount is number &&
+          song.commentCount >= 0 &&
+          song.commentCount != '' &&
+        
+          song.createdAt is timestamp &&
+          song.createdAt != '' &&
+        
+          song.lastModified is timestamp &&
+          song.lastModified != '' &&
+          
+          song.uid is string &&
+          song.uid != '' &&
+         
+          song.url is string &&
+          song.url != '' 
+        );
+      }
+
+      function rateLimit(sec) {
+        return ( 
+          request.time > resource.data.lastModified +
+          duration.value(sec, 's')
+        ); 
+      }
+
+      function checkKeysSong() {
+      	let optionalFields = [];
+        let requiredFields = ['displayName','originalName','modifiedName','genre','commentCount','createdAt','lastModified', 'uid','url'];
+        let allFields = requiredFields.concat(optionalFields);
+        return request.resource.data.keys().hasAll(requiredFields) &&
+        request.resource.data.keys().hasOnly(allFields)
+      }
+    }
+  }
+}

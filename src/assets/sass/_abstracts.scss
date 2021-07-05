@@ -1,0 +1,173 @@
+:root {
+  --color-primary: hsl(343, 82%, 55%);
+  --color-primary-light: hsl(345, 100%, 60%);
+  --color-primary-dark: hsl(338, 66%, 44%);
+
+  --color-secondary: hsl(174, 40%, 55%);
+  --color-secondary-light: hsl(182, 43%, 76%);
+
+  --color-tertiary: hsl(215, 39%, 34%);
+
+  --color-grey-light-1: hsl(0, 9%, 98%);
+  --color-grey-light-2: hsl(0, 8%, 95%);
+  --color-grey-light-3: hsl(0, 6%, 94%);
+  --color-grey-light-4: hsl(0, 0%, 80%);
+
+  --color-grey-dark-3: hsl(0, 0%, 60%);
+  --color-grey-dark-2: hsl(0, 0%, 47%);
+  --color-grey-dark-0: hsl(0, 0%, 27%);
+  --color-grey-dark-1: hsl(0, 0%, 20%);
+
+  --color-background-header: hsla(0, 0%, 100%, 0.2);
+  --color-background-primary: hsla(0, 0%, 100%, 0.5);
+
+  --shadow-btn: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  --shadow-btn--active: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+  --shadow-small: 0 0.5rem 1.5rem hsla(0, 0%, 0%, 0.05);
+  --shadow-medium: 0 1.5rem 3rem hsla(0, 0%, 0%, 0.05);
+  --shadow-large: 0 1.5rem 3.5rem hsla(0, 0%, 0%, 0.05);
+
+  --font-primary: 'Poppins', sans-serif;
+}
+
+$bp-largest: 68.75em; // 1100px
+$bp-large: 60em; // 960px
+$bp-medium: 49.06em; // 785px
+$bp-small: 42.81em; // 685px
+$bp-smaller: 37.5em; // 600px
+$bp-smallest: 28.125em; // 450px
+$bp-micro: 21.563em; // 345px
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == xl {
+    @media only screen and (max-width: $bp-largest) {
+      @content;
+    }
+  }
+  @if $breakpoint == l {
+    @media only screen and (max-width: $bp-large) {
+      @content;
+    }
+  }
+  @if $breakpoint == m {
+    @media only screen and (max-width: $bp-medium) {
+      @content;
+    }
+  }
+  @if $breakpoint == s {
+    @media only screen and (max-width: $bp-small) {
+      @content;
+    }
+  }
+  @if $breakpoint == xs {
+    @media only screen and (max-width: $bp-smaller) {
+      @content;
+    }
+  }
+  @if $breakpoint == xxs {
+    @media only screen and (max-width: $bp-smallest) {
+      @content;
+    }
+  }
+  @if $breakpoint == xxxs {
+    @media only screen and (max-width: $bp-micro) {
+      @content;
+    }
+  }
+}
+
+@mixin gradient($direction, $color-1, $color-2) {
+  background: linear-gradient($direction, $color-1, $color-2),
+    no-repeat center center / cover;
+}
+
+%bg-main {
+  background-image: linear-gradient(
+      344deg,
+      rgb(197, 160, 165) 0%,
+      rgb(197, 160, 165) 20%,
+      rgb(206, 134, 161) 20%,
+      rgb(206, 134, 161) 38%,
+      rgb(215, 108, 156) 38%,
+      rgb(215, 108, 156) 68%,
+      rgb(225, 82, 152) 68%,
+      rgb(225, 82, 152) 78%,
+      rgb(234, 55, 148) 78%,
+      rgb(234, 55, 148) 80%,
+      rgb(243, 29, 143) 80%,
+      rgb(243, 29, 143) 96%,
+      rgb(252, 3, 139) 96%,
+      rgb(252, 3, 139) 100%
+    ),
+    linear-gradient(
+      208deg,
+      rgb(197, 160, 165) 0%,
+      rgb(197, 160, 165) 20%,
+      rgb(206, 134, 161) 20%,
+      rgb(206, 134, 161) 38%,
+      rgb(215, 108, 156) 38%,
+      rgb(215, 108, 156) 68%,
+      rgb(225, 82, 152) 68%,
+      rgb(225, 82, 152) 78%,
+      rgb(234, 55, 148) 78%,
+      rgb(234, 55, 148) 80%,
+      rgb(243, 29, 143) 80%,
+      rgb(243, 29, 143) 96%,
+      rgb(252, 3, 139) 96%,
+      rgb(252, 3, 139) 100%
+    ),
+    linear-gradient(
+      189deg,
+      rgb(197, 160, 165) 0%,
+      rgb(197, 160, 165) 20%,
+      rgb(206, 134, 161) 20%,
+      rgb(206, 134, 161) 38%,
+      rgb(215, 108, 156) 38%,
+      rgb(215, 108, 156) 68%,
+      rgb(225, 82, 152) 68%,
+      rgb(225, 82, 152) 78%,
+      rgb(234, 55, 148) 78%,
+      rgb(234, 55, 148) 80%,
+      rgb(243, 29, 143) 80%,
+      rgb(243, 29, 143) 96%,
+      rgb(252, 3, 139) 96%,
+      rgb(252, 3, 139) 100%
+    ),
+    linear-gradient(
+      230deg,
+      rgb(197, 160, 165) 0%,
+      rgb(197, 160, 165) 20%,
+      rgb(206, 134, 161) 20%,
+      rgb(206, 134, 161) 38%,
+      rgb(215, 108, 156) 38%,
+      rgb(215, 108, 156) 68%,
+      rgb(225, 82, 152) 68%,
+      rgb(225, 82, 152) 78%,
+      rgb(234, 55, 148) 78%,
+      rgb(234, 55, 148) 80%,
+      rgb(243, 29, 143) 80%,
+      rgb(243, 29, 143) 96%,
+      rgb(252, 3, 139) 96%,
+      rgb(252, 3, 139) 100%
+    ),
+    linear-gradient(
+      69deg,
+      rgb(197, 160, 165) 0%,
+      rgb(197, 160, 165) 20%,
+      rgb(206, 134, 161) 20%,
+      rgb(206, 134, 161) 38%,
+      rgb(215, 108, 156) 38%,
+      rgb(215, 108, 156) 68%,
+      rgb(225, 82, 152) 68%,
+      rgb(225, 82, 152) 78%,
+      rgb(234, 55, 148) 78%,
+      rgb(234, 55, 148) 80%,
+      rgb(243, 29, 143) 80%,
+      rgb(243, 29, 143) 96%,
+      rgb(252, 3, 139) 96%,
+      rgb(252, 3, 139) 100%
+    ),
+    linear-gradient(60deg, rgb(77, 249, 52), rgb(153, 163, 31));
+
+  background-blend-mode: overlay, overlay, overlay, overlay, overlay, normal;
+}

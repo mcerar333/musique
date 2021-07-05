@@ -1,0 +1,193 @@
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 200;
+  src: local('Poppins-ExtraLight'),
+    url('@/assets/fonts/poppins-v15-latin-200.woff2') format('woff2'),
+    url('@/assets/fonts/poppins-v15-latin-200.woff') format('woff');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Poppins-Light'),
+    url('@/assets/fonts/poppins-v15-latin-300.woff2') format('woff2'),
+    url('@/assets/fonts/poppins-v15-latin-300.woff') format('woff');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Poppins-Regular'),
+    url('@/assets/fonts/poppins-v15-latin-regular.woff2') format('woff2'),
+    url('@/assets/fonts/poppins-v15-latin-regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Poppins-Medium'),
+    url('@/assets/fonts/poppins-v15-latin-500.woff2') format('woff2'),
+    url('@/assets/fonts/poppins-v15-latin-500.woff') format('woff');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Poppins-SemiBold'),
+    url('@/assets/fonts/poppins-v15-latin-600.woff2') format('woff2'),
+    url('@/assets/fonts/poppins-v15-latin-600.woff') format('woff');
+}
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Poppins-Bold'),
+    url('@/assets/fonts/poppins-v15-latin-700.woff2') format('woff2'),
+    url('@/assets/fonts/poppins-v15-latin-700.woff') format('woff');
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+
+  @include respond(xl) {
+    font-size: 56.25%; // 1rem = 9px
+  }
+  @include respond(l) {
+    font-size: 50%; // 1rem = 8px
+  }
+  @include respond(xxxs) {
+    font-size: 45%; // 1rem = 7.2px
+  }
+
+  &:focus-within {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 8.5rem 0 26rem;
+  color: var(--color-grey-dark-1);
+  font-family: var(--font-primary);
+
+  @extend %bg-main;
+
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+
+  display: grid;
+  grid-template-rows: max-content;
+
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr)
+    [center-start] minmax(min-content, 110rem)
+    [center-end] minmax(6rem, 1fr)
+    [full-end];
+
+  @include respond(l) {
+    grid-template-columns:
+      [full-start] minmax(2rem, 1fr)
+      [center-start] minmax(min-content, 110rem)
+      [center-end] minmax(2rem, 1fr)
+      [full-end];
+  }
+  @include respond(xs) {
+    padding-top: 9rem;
+  }
+  @include respond(xxs) {
+    padding: 9rem 0 17.2rem;
+
+    grid-template-columns:
+      [full-start] 1fr
+      [center-start] minmax(min-content, 110rem)
+      [center-end] 1fr
+      [full-end];
+  }
+
+  &::-webkit-scrollbar {
+    width: 1.2rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 5px;
+    background-color: var(--color-grey-light-3);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-image: linear-gradient(
+      to left,
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+#app {
+  grid-column: center-start / center-end;
+
+  position: relative;
+  border-radius: 2rem;
+  padding: 9rem 5rem 5rem;
+  box-shadow: var(--shadow-large);
+  background: var(--color-background-primary);
+
+  @include respond(s) {
+    padding: 8rem 3rem 3rem;
+  }
+  @include respond(xs) {
+    padding-top: 10.3rem;
+  }
+  @include respond(xxs) {
+    padding: 10.3rem 0 3rem;
+    border-radius: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

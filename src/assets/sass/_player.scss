@@ -1,0 +1,141 @@
+.player {
+  position: fixed;
+
+  left: 50%;
+  bottom: 5rem;
+  transform: translateX(-50%);
+
+  padding: 0.4rem 3rem;
+  border-radius: 2.5rem;
+  box-shadow: var(--shadow-medium);
+  background: hsla(0, 0%, 100%, 0.75);
+
+  transition: all 0.3s;
+
+  @include respond(xxs) {
+    bottom: 2rem;
+    padding: 0.2rem 2rem;
+  }
+
+  &.hidden {
+    transform: translateX(50%);
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  &__info {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, calc(-100% + 1px));
+
+    padding: 1.5rem 2.5rem;
+    border-top-left-radius: 2.5rem;
+    border-top-right-radius: 2.5rem;
+    background: hsla(0, 0%, 100%, 0.7);
+
+    transition: all 0.3s;
+    transition-delay: 0.4s;
+
+    @include respond(xxs) {
+      padding: 1rem 1.2rem 0.8rem;
+    }
+
+    &.hidden {
+      transform: translate(-50%, 0);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @include respond(xxs) {
+      gap: 0.5rem;
+    }
+  }
+
+  &__volume {
+    width: 12rem;
+    padding: 1rem;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-grey-dark-1);
+    }
+  }
+}
+
+.progress {
+  position: relative;
+  font-size: 1.4rem;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__container {
+    position: absolute;
+    left: 14%;
+    width: 72%;
+    height: 1rem;
+    border-radius: 5px;
+    background-color: var(--color-grey-light-4);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__bar {
+    width: 50%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: var(--color-primary);
+  }
+}
+
+.player-btn {
+  display: inline-block;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  width: 8rem;
+  height: 8rem;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: transparent;
+
+  @include respond(xxs) {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  &:hover svg,
+  &:focus svg,
+  &:active svg {
+    fill: var(--color-grey-dark-2);
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-grey-dark-3);
+
+    transition: fill 0.3s;
+  }
+}

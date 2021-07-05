@@ -1,0 +1,17 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /songs/{userId}/{document=**} {
+      allow read: if true;
+      
+      allow create: if request.auth != null && 
+      	request.resource.contentType == 'audio/mpeg' && 
+        request.resource.size < 10 * 1024 * 1024;
+        
+      allow delete: if request.auth != null && 
+      	request.auth.uid == userId;
+      
+      allow update: if false;
+    }
+  }
+}

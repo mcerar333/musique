@@ -1,0 +1,35 @@
+@keyframes float {
+  from {
+    transform: translateX(-3rem) translateY(4rem) scale(1.4) rotate(-5deg);
+  }
+  to {
+    transform: translateX(-1rem) translateY(-3rem) scale(1.6) rotate(5deg);
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 1rem 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  2.8% {
+    transform: scale(1.1);
+  }
+  5.6% {
+    transform: scale(1);
+  }
+  8.4% {
+    transform: scale(1.1);
+  }
+  14% {
+    transform: scale(1);
+  }
+}

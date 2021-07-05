@@ -1,0 +1,59 @@
+{
+  "about": {
+    "p1": "Musique je globalna platforma za pretakanje glasbe, ki z edinstvenimi doživetji in najvišjo kakovostjo zvoka zbližuje oboževalce in umetnike.",
+    "p2": "Umetnikom omogočamo, da ustvarjajo in delijo svojo glasbo točno tako, kot so si zamislili.",
+    "p3": "Prisluhnite glasbi s katere koli naprave, ne glede na to, ali ste brez povezave, izven uhojenih poti, doma ali v avtu.",
+    "title": "O Nas"
+  },
+  "auth": {
+    "age": "Starost",
+    "confirm": "Potrditev Gesla",
+    "country": "Država",
+    "email": "E-naslov",
+    "login": "Vpis",
+    "name": "Ime",
+    "password": "Geslo",
+    "register": "Registracija",
+    "submit": "Pošlji",
+    "title": "Vaš Račun",
+    "tos": "Sprejmam Pogoje Storitve"
+  },
+  "header": {
+    "about": "Info",
+    "login": "Prijava",
+    "logout": "Odjava",
+    "manage": "Upravljaj"
+  },
+  "home": {
+    "description": "Musique je glasbena platforma, ki povezuje talente svetovne glasbene industrije. Odkrivajte, pretakajte in delite vse obsežnejšo mešanico glasbe vzhajajočih in obstoječih umetnikov z vsega sveta.",
+    "empty": "V bazi ni še nobene pesmi. Bodi prvi in naloži pesem...",
+    "error": "Naši strežniki trenutno niso na voljo. Prosimo poskusite kasneje...",
+    "songs": "Pesmi",
+    "title": "Poslušaj Odlično Glasbo"
+  },
+  "manage": {
+    "discard": "Zavrzi",
+    "drop": "POVLECI SVOJE MP3je",
+    "finished": "Pesem uspešno naložena",
+    "genre": "Zvrst:",
+    "genrePlaceholder": "vnesi zvrst pesmi",
+    "select": "Ali jih izberi",
+    "songs": "Moje Pesmi",
+    "submit": "Pošlji",
+    "title": "Naslov Pesmi:",
+    "titlePlaceholder": "vnesi naslov pesmi",
+    "upload": "Naloži"
+  },
+  "player": {
+    "volume": "Glasnost:"
+  },
+  "song": {
+    "commentCount": "Ni Komentarjev | 1 Komentar | 2 Komentarja | { n } Komentarji | { n } Komentarjev",
+    "empty": "Ni komentarjev za prikaz. Bodi prvi in dodaj svoj komentar...",
+    "error": "Prišlo je do napake pri pridobivanju komentarjev. Prosimo poskusite kasneje...",
+    "latest": "Novejši",
+    "oldest": "Starejši",
+    "placeholder": "napiši svoj komentar",
+    "submit": "Pošlji"
+  }
+}

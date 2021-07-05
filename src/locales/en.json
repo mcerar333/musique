@@ -1,0 +1,59 @@
+{
+  "about": {
+    "p1": "Musique is a global music streaming platform bringing fans closer to artists through unique experiences and the highest sound quality.",
+    "p2": "We empower artists to create and deliver their art exactly as they intended.",
+    "p3": "Listen on your terms on any device, whether you’re offline, off-the-beaten path, at home or in the car.",
+    "title": "About Us"
+  },
+  "auth": {
+    "age": "Age",
+    "confirm": "Confirm Password",
+    "country": "Country",
+    "email": "Email",
+    "login": "Login",
+    "name": "Name",
+    "password": "Password",
+    "register": "Register",
+    "submit": "Submit",
+    "title": "Your Account",
+    "tos": "Accept Terms of Service"
+  },
+  "header": {
+    "about": "About",
+    "login": "Login",
+    "logout": "Logout",
+    "manage": "Manage"
+  },
+  "home": {
+    "description": "Musique connects global music industry talent on one platform. Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world.",
+    "empty": "There are no songs to display. Be the first to upload a song...",
+    "error": "Our servers are currently unavailable. Please try again later...",
+    "songs": "Songs",
+    "title": "Listen to Great Music"
+  },
+  "manage": {
+    "discard": "Discard",
+    "drop": "DROP YOUR MP3s HERE",
+    "finished": "Song uploaded",
+    "genre": "Genre:",
+    "genrePlaceholder": "enter song genre",
+    "select": "Or select them",
+    "songs": "My Songs",
+    "submit": "Submit",
+    "title": "Song Title:",
+    "titlePlaceholder": "enter song title",
+    "upload": "Upload"
+  },
+  "player": {
+    "volume": "Volume:"
+  },
+  "song": {
+    "commentCount": "No Comments | 1 Comment | { n } Comments",
+    "empty": "There are no comments to display. Be the first to add a comment...",
+    "error": "An error occurred retrieving comments. Please try again later...",
+    "latest": "Latest",
+    "oldest": "Oldest",
+    "placeholder": "write your comment here",
+    "submit": "Submit"
+  }
+}
