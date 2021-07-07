@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshots SongItem.vue component renders correctly 1`] = `
+<li
+  class="song"
+>
+  <div
+    class="song__info"
+  >
+    <router-link-stub
+      to="[object Object]"
+    />
+    <p>
+      Bobby Brown
+    </p>
+  </div>
+  <router-link-stub
+    custom=""
+    to="[object Object]"
+  />
+</li>
+`;
