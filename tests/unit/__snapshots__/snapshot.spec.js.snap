@@ -1,5 +1,54 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Snapshots About.vue component renders correctly 1`] = `
+<section
+  class="about"
+>
+  <div
+    class="about__info"
+  >
+    <h1
+      class="about__title"
+    >
+      about.title
+    </h1>
+    <p>
+      about.p1
+    </p>
+    <p>
+      about.p2
+    </p>
+    <p>
+      about.p3
+    </p>
+  </div>
+  <figure
+    class="about__image"
+  >
+    <img
+      alt="girl listening to music"
+      src="/assets/img/girl.png"
+    />
+  </figure>
+</section>
+`;
+
+exports[`Snapshots BaseLottie.vue component renders correctly 1`] = `
+<div
+  class="lottie-container"
+/>
+`;
+
+exports[`Snapshots NotFound.vue component renders correctly 1`] = `
+<section
+  class="not-found"
+>
+  <base-lottie-stub
+    options="[object Object]"
+  />
+</section>
+`;
+
 exports[`Snapshots SongItem.vue component renders correctly 1`] = `
 <li
   class="song"
