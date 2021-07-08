@@ -23,8 +23,8 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
 import { getErrMsgAuth } from '@/includes/helpers';
+import { mapMutations } from 'vuex';
 
 export default {
   name: 'LoginForm',

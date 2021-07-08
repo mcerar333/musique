@@ -97,9 +97,13 @@ import { auth, dbComments, dbSongs, timestamp } from '@/includes/firebase';
 import { getErrMsgFirebase } from '@/includes/helpers';
 import { formatDistanceToNow } from 'date-fns';
 import { mapState, mapActions } from 'vuex';
+import { defineAsyncComponent } from 'vue';
 
-import BaseLottie from '@/components/BaseLottie.vue';
 import * as animationData from '@/assets/lottie/movie.json';
+
+const BaseLottie = defineAsyncComponent(() =>
+  import('@/components/BaseLottie.vue')
+);
 
 export default {
   name: 'Song',

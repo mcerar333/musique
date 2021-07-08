@@ -17,9 +17,16 @@
 </template>
 
 <script>
+import { defineAsyncComponent } from 'vue';
+
 import TheHeader from '@/components/TheHeader.vue';
-import TheAuthModal from '@/components/TheAuthModal.vue';
-import TheAudioPlayer from '@/components/TheAudioPlayer.vue';
+
+const TheAuthModal = defineAsyncComponent(() =>
+  import('@/components/TheAuthModal.vue')
+);
+const TheAudioPlayer = defineAsyncComponent(() =>
+  import('@/components/TheAudioPlayer.vue')
+);
 
 export default {
   name: 'App',
