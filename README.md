@@ -10,6 +10,8 @@
 
 🎧 **Musique** connects global music industry talent on one platform. Discover, stream, and share a constantly expanding mix of music from emerging and major artists around the world. 🎶 🎵 🎶
 
+Sign up and install the app on your homescreen. Listen music on your terms on any device, whether you’re offline, off-the-beaten path, at home or in the car.
+
 ## Tech
 
 ### Frontend:
