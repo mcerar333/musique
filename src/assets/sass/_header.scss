@@ -26,11 +26,9 @@
     gap: 1.5rem;
   }
   @include respond(xxs) {
-    border-radius: 1rem;
-  }
-  @include respond(xxxs) {
-    left: 0.5rem;
-    right: 0.5rem;
+    left: 0;
+    right: 0;
+    border-radius: 0;
   }
 
   &__logo:link,
