@@ -3,8 +3,19 @@
     <div class="new-song__controls">
       <h3 class="heading-3">{{ songName }}</h3>
 
-      <button class="btn" v-svg="'icon-edit'" @click="toggleShowForm"></button>
-      <button class="btn" v-svg="'icon-trash'" @click="removeSong"></button>
+      <button
+        class="btn"
+        aria-label="edit song"
+        v-svg="'icon-edit'"
+        @click="toggleShowForm"
+      ></button>
+
+      <button
+        class="btn"
+        aria-label="delete song"
+        v-svg="'icon-trash'"
+        @click="removeSong"
+      ></button>
     </div>
 
     <vee-form
